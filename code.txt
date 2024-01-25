@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to da pet store where we sell the pets!");
+        Console.WriteLine("What pets you want?");
+        string[] animals = new string[] { "Dog", "Cat", "Bird", "Lizard", "Snake", "Hamster", "Irridecent Lightning Dragon" };
+        string[] adopted = new string[20];
+        int petindex = 0;
+        foreach (var animal in animals)
+        {
+            Console.WriteLine($"Do you want to adopt {animal}? (yes/no)");
+            string input = Console.ReadLine().ToLower();
+
+            if (input == "yes")
+            {
+                adopted[petindex] = input;
+                petindex++;
+                Console.WriteLine($"you adopted: {animal}!");
+            }
+            else
+            {
+                Console.WriteLine($"That's ok, I'm sure {animal} will find a good home!");
+            }
+        }
+        Console.WriteLine("\nAdopted Pets: ");
+        foreach (var animal in animals)
+        {
+            Console.WriteLine(animal);
+        }
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
+    }
+}
